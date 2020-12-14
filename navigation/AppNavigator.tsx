@@ -4,12 +4,14 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
-import NotificationNavigator from "./NotificationNavigator";
 
 import FeedScreen from "../screen/FeedScreen";
 import SearchScreen from "../screen/SearchScreen";
 import MessagesScreen from "../screen/MessagesScreen";
 import {STACK_NAVIGATOR_SCREEN_OPTIONS} from "../constants/stackNavigator";
+
+import NotificationNavigator from "./NotificationNavigator";
+import AnotherNavigator from "./AnotherNavigator";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -39,6 +41,7 @@ const Test = () => (
       <Tab.Screen name="Search" component={_SearchScreen} />
       <Tab.Screen name="Message" component={_MessagesScreen} />
       <Tab.Screen name='Notification' component={NotificationNavigator} />
+      <Tab.Screen name='Another' component={AnotherNavigator} />
     </Tab.Navigator>
   </NavigationContainer>
 )
