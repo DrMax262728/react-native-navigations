@@ -1,18 +1,18 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack'
+import {
+  createStackNavigator,
+} from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
+import NotificationNavigator from "./NotificationNavigator";
 
 import FeedScreen from "../screen/FeedScreen";
 import SearchScreen from "../screen/SearchScreen";
 import MessagesScreen from "../screen/MessagesScreen";
+import {STACK_NAVIGATOR_SCREEN_OPTIONS} from "../constants/stackNavigator";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
-
-const STACK_NAVIGATOR_SCREEN_OPTIONS: StackNavigationOptions = {
-  headerTitleAlign: 'center'
-}
 
 const _FeedScreen = () => (
   <Stack.Navigator>
@@ -38,6 +38,7 @@ const Test = () => (
       <Tab.Screen name="Feed" component={_FeedScreen} />
       <Tab.Screen name="Search" component={_SearchScreen} />
       <Tab.Screen name="Message" component={_MessagesScreen} />
+      <Tab.Screen name='Notification' component={NotificationNavigator} />
     </Tab.Navigator>
   </NavigationContainer>
 )
